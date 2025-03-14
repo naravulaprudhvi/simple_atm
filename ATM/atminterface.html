@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM INTERFACE</title>
+    <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+       
+    }
+    body{
+        background-image: url('images/atminterface.jpeg');
+        background-size: cover; 
+        
+    }
+    button {
+    width: 250px ;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(27, 27, 27);
+    color: white;
+    text-decoration: none;
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    }
+    button:hover {
+    background-color: rgb(104, 146, 161);
+    color: black;
+    }
+    table{
+        float:left;
+        height: 300px;
+    }
+    .cl1{
+        margin-left: 420px;
+        margin-top: 320px;
+        
+    }
+    .cl2{
+        margin-top: 320px;
+        margin-left: 185px;
+    }
+
+
+    </style>
+</head>
+<body>
+    <table class="cl1">
+        <tr>
+            <td><button onclick="withdraw()">Cash Withdraw</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="balance()">Balance Inquiry</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="deposit()">Cash Deposit</button></td>
+        </tr>
+    </table>
+    <table class="cl2">
+        <tr>
+            <td><button onclick="help()">Help / Assistance</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="pinchange()">PIN Change</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="cancle()">Cancle Transaction</button></td>
+        </tr>
+    </table>
+    <script>
+        function withdraw(){
+            window.location.href = 'atmwithdraw.html';
+        }
+        function balance(){
+            window.location.href = 'atmbalance.html';
+        }
+        function deposit(){
+            window.location.href = 'atmdeposit.html';
+        }
+        function help(){
+            window.location.href = 'atmhelp.html';
+        }
+        function pinchange(){
+            window.location.href = 'atmpinchange.html';
+        }
+        function cancle(){
+            window.location.href = 'firstpage.html';
+        }
+
+
+        
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

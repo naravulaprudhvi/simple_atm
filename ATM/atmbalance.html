@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM INTERFACE</title>
+    <style>
+    *{
+        padding: 0px;
+        margin: 0px;       
+    }
+    body{
+        background-image: url('images/atminterface.jpeg');
+        background-size: cover;         
+    }
+    button{
+        width: 250px ;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: rgb(27, 27, 27);
+        color: white;
+        text-decoration: none;
+        border-radius: 13px;
+        border: none;
+        cursor: pointer;
+        font-size: 22px;
+        margin-top: 70px;
+        
+    }
+    button:hover {
+    background-color: rgb(104, 146, 161);
+    color: black;
+    }
+    
+    .cl1{
+
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-family: cursive;
+        font-size: 25px;
+        margin-top: 280px;
+        
+    } 
+    .cl2{
+        text-shadow: 0 0 10px #64e4fe, 0 0 20px #64e4fe, 0 0 25px #64e4fe;
+        color: white;
+        margin-left: 640px;
+    }
+    p{
+        margin-left: 680px;
+        color: red;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+        
+    }
+    
+    </style>
+</head>
+<body>
+   
+  
+    <div class="cl1" > <cod id="balanceinquary"> </cod></div>
+    <div class="cl2"> <button onclick="back()">Back</button></div>
+   
+
+
+   <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        let idbal = document.getElementById('balanceinquary');
+        let inputcdnum = localStorage.getItem("currentCdnum");
+
+        if (typeof users === "undefined") {
+            console.error("Users array is not loaded. Make sure script.js is included correctly.");
+            idbal.innerText = "Error: Users not loaded";
+            return;
+        }
+
+        if (inputcdnum) {
+            let user = users.find(user => user.cdnum === inputcdnum);
+
+            if (user) {
+                idbal.innerText = 'Welcome ' + user.name+'\n\n \nAvaliable Balance : '+user.amount+'\n\nTHANK-YOU...';
+
+            } 
+        } else {
+            idbal.innerText = 'Welcome, Guest'; 
+        }
+    }); 
+
+    function back() {
+        window.location.href = "atminterface.html";
+    }
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>

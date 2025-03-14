@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM INTERFACE</title>
+    <style>
+    *{
+        padding: 0px;
+        margin: 0px;       
+    }
+    body{
+        background-image: url('images/atminterface.jpeg');
+        background-size: cover;         
+    }
+    button{
+        width: 250px ;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: rgb(27, 27, 27);
+        color: white;
+        text-decoration: none;
+        border-radius: 13px;
+        border: none;
+        cursor: pointer;
+        font-size: 22px;
+        margin-top: 40px;
+        
+    }
+    button:hover {
+    background-color: rgb(104, 146, 161);
+    color: black;
+    }
+    input{
+        width: 350px;
+        height:50px;
+        background-color: rgb(127, 221, 221);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+        border-radius: 3px;
+        margin-top: 320px;
+        margin-left: 590px;
+        text-align: center;
+    }
+    .cl1{
+        text-shadow: 0 0 10px #64e4fe, 0 0 20px #64e4fe, 0 0 25px #64e4fe;
+        color: white;
+        margin-left: 640px;
+    } 
+    .cl2{
+        text-shadow: 0 0 10px #64e4fe, 0 0 20px #64e4fe, 0 0 25px #64e4fe;
+        color: white;
+        margin-left: 640px;
+    }
+    p{
+        margin-left: 680px;
+        color: red;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+    }
+    
+    </style>
+</head>
+<body>
+    <input type="text" id="inputamount" placeholder="Enter Amount :"><br>
+    <p id="message"></p>
+    <div class="cl1"> <button onclick="amountCheck1()" id="inputamount">DEPOSIT</button></div>
+    <div class="cl2"> <button onclick="back()">Cancle</button></div>
+   
+
+
+   <script>
+function amountCheck1() {
+    let inputamount = parseFloat(document.getElementById('inputamount').value.trim()); // Convert input to a number
+    let inputcdnum = localStorage.getItem("currentCdnum");
+    let user = users.find(user => user.cdnum === inputcdnum);
+
+    if (user && !isNaN(inputamount) && inputamount > 0) {  // Ensure valid numeric input
+        user.amount += inputamount; // Correct numerical addition
+        window.alert('AMOUNT CREDITED: ' + inputamount + '\nAVAILABLE BALANCE: ' + user.amount);
+        document.getElementById('inputamount').value = '';                  
+    } else {
+        window.alert('SOMETHING WENT WRONG.... \nPLEASE CHECK MR/MS ' + (user ? user.name : 'Unknown User'));
+    }
+}
+
+        function back() {
+            window.location.href = "atminterface.html";
+        }
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
