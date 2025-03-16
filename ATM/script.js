@@ -1,7 +1,7 @@
 let users = [
-    { name: "PRUDHVI", cdnum: "123456789", pin: "1234" ,amount:99999},
-    { name: "NARENDRA", cdnum: "987654321", pin: "9872" , amount:100000},
-    { name: "MOHAN", cdnum: "11223344", pin: "1122" , amount:150000}
+    { name: "PRUDHVI", cdnum: "123456789", pin: "1234" ,amount:5000},
+    { name: "NARENDRA", cdnum: "987654321", pin: "9876" , amount:10000},
+    { name: "MOHAN", cdnum: "11223344", pin: "1122" , amount:15000}
 ];
 function cdnumCheck() {
     let inputcdnum = document.getElementById('inputcdnum').value.trim();
